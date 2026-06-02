@@ -7,10 +7,11 @@
 
 body {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 .container {

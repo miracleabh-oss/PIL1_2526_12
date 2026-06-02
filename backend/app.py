@@ -32,5 +32,9 @@ def load_user(user_id):
 def accueil():
     return render_template('login.html')
 
+@app.route('/inscription')
+def inscription():
+    return render_template('inscription.html')
+    
 if __name__ == '__main__':
     socketio.run(app, debug=True)

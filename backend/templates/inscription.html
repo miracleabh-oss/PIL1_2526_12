@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentorLink - Inscription</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container" style="width: 500px; margin: 40px auto;">
+        <div class="logo">
+            <h1>Mentor<span>Link</span></h1>
+            <p>Créez votre compte</p>
+        </div>
+
+        <form action="/inscription" method="POST">
+            <div class="form-group">
+                <label>Nom</label>
+                <input type="text" name="nom" placeholder="Votre nom" required>
+            </div>
+
+            
+            <div class="form-group">
+                <label>Prénom</label>
+                <input type="text" name="prenom" placeholder="Votre prénom" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Votre email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Téléphone</label>
+                <input type="text" name="telephone" placeholder="Votre numéro de téléphone" required>
+            </div>
+
+            <div class="form-group">
+                <label>Filière</label>
+                <select name="filiere" required style="width:100%; padding:12px 15px; border:2px solid #eee; border-radius:8px; font-size:15px; outline:none;">
+                    <option value="">-- Choisir une filière --</option>
+                    <option value="IA">Intelligence Artificielle (IA)</option>
+                    <option value="IM">Ingénierie Multimédia (IM)</option>
+                    <option value="GL">Génie Logiciel (GL)</option>
+                    <option value="SE&IoT">Systèmes Embarqués & IoT</option>
+                    <option value="SI">Systèmes d'Information (SI)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Niveau</label>
+                <select name="niveau" required style="width:100%; padding:12px 15px; border:2px solid #eee; border-radius:8px; font-size:15px; outline:none;">
+                    <option value="">-- Choisir un niveau --</option>
+                    <option value="L1">Licence 1</option>
+                    <option value="L2">Licence 2</option>
+                    <option value="L3">Licence 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" name="mot_de_passe" placeholder="Choisissez un mot de passe" required>
+            </div>
+
+            <div class="form-group">
+                <label>Confirmer le mot de passe</label>
+                <input type="password" name="confirm_mdp" placeholder="Confirmez votre mot de passe" required>
+            </div>
+
+            <button type="submit" class="btn">S'inscrire</button>
+        </form>
+
+        <div class="links">
+            <p>Déjà un compte ? <a href="/">Se connecter</a></p>
+        </div>
+    </div>
+</body>
+</html>
