@@ -46,3 +46,12 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
