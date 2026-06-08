@@ -57,6 +57,30 @@
     </p>
 
     <h2>4. Architecture du système</h2>
+    <p>
+      L'application IFRI_MentorLink est conçue selon une architecture client-serveur. Cette architecture permet de séparer les différentes composantes du système afin de faciliter
+      son développement, sa maintenance et son évolution.
+    </p>
+    
+    <p>
+      La partie cliente est constituée des interfaces web développées en HTML,CSS et JavaScript. Elle permet aux utilisateurs d'interagir avec la plateformeà travers les différentes fonctionnalités
+      proposées, notamment l'inscription, la connexion, la gestion du profil, la recherche de mentorat et la messagerie.
+    </p>
+    
+    <p>
+      La partie serveur, développée en Python, assure le traitement des requêtes, la gestion des comptes utilisateurs, le système de mise en correspondance entre mentors et mentorés ainsi que les échanges
+      avec la base de données.
+    </p>
+    
+    <p>
+      Les données sont stockées dans une base de données PostgreSQL structurée autour de plusieurs entités principales. Parmi celles-ci figurent les utilisateurs, les profils, les compétences, les disponibilités,
+      les publications de mentorat, les correspondances générées par l'algorithme de matching ainsi que les conversations et messages échangés entre utilisateurs.
+    </p>
+    
+    <p>
+      Cette organisation permet d'assurer une séparation claire des responsabilités  entre l'interface utilisateur, la logique métier et le stockage des données, tout en garantissant la cohérence et la sécurité
+      des informations manipulées par l'application.
+    </p>
 
     <h2>5. Base de données</h2>
     <p>
@@ -64,16 +88,19 @@
       Elle centralise l'ensemble des données nécessaires au fonctionnement de la plateforme, notamment les comptes utilisateurs, les profils, les compétences,
       les offres et demandes de mentorat, les correspondances entre mentors et mentorés ainsi que les conversations et messages échangés.
     </p>
+    
     <p>
       L'organisation de la base de données repose sur plusieurs tables liées entre elles. La table "users" contient les informations essentielles des utilisateurs, tandis que la table
       "profiles" stocke les détails complémentaires tels que la filière, le niveau d'études ou la biographie. Les compétences et les besoins d'accompagnement sont gérés à travers les tables
       "skills" et "users_skills"
     </p>
+    
     <p>
       Le système de mentorat s'appuie sur les tables "mentoring_posts" et "matches", qui permettent respectivement de gérer les offres ou demandes de mentorat 
       et les propositions de mise en relation générées par l'application. Enfin, les échanges entre utilisateurs sont enrégistrés dans les tables "conversations" et "messages",
       garantissent ainsi le suivi de l'historique des discussions.
     </p>
+    
     <p>
       Plusieurs contraintes de sécurité ont également été prévues, notamment l'unicité les adresses e-mail et des numéros de téléphone, le hachage des mots de passe avant leur 
       enregistrement ainsi que des règles empêchant certaines incohérences, comme la création d'un match entre un utilisateur et lui-même.
