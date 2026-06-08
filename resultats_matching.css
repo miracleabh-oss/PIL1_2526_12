@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: white;
+    border-bottom: 1px solid #c8e6c9;
+}
+
+.nav a {
+    margin-left: 24px;
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.contenu {
+    width: 100%;
+    max-width: 860px;
+}
+
+.contenu h1 {
+    color: #2e7d32;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.sous-titre {
+    color: #555;
+    margin-bottom: 28px;
+}
+
+.liste-matching {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.carte-match {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.carte-gauche {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 200px;
+}
+
+.photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #2e7d32;
+}
+
+.infos h2 {
+    color: #333;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.role {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.carte-centre {
+    flex: 1;
+}
+
+.label {
+    color: #777;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    padding: 4px 12px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.carte-droite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 120px;
+}
+
+.score {
+    text-align: center;
+}
+
+.score-valeur {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.score-label {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.btn-contacter {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.btn-contacter:hover {
+    background-color: #1b5e20;
+}
+
+@media (max-width: 700px) {
+    .carte-match {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .carte-droite {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

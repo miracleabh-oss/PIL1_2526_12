@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: white;
+    border-bottom: 1px solid #c8e6c9;
+}
+
+.nav a {
+    margin-left: 24px;
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.profil-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.profil-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.photo-profil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #2e7d32;
+}
+
+.profil-identite h1 {
+    color: #2e7d32;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.filiere-niveau {
+    color: #555;
+    font-size: 1rem;
+}
+
+.section {
+    margin-bottom: 28px;
+}
+
+.section h2 {
+    color: #2e7d32;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.tag-fort {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.tag-lacune {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffcc80;
+}
+
+.disponibilites {
+    list-style: none;
+}
+
+.disponibilites li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.jour {
+    font-weight: bold;
+    color: #333;
+}
+
+.heure {
+    color: #555;
+}
+
+.cache {
+    display: none;
+}
+
+.btn-modifier {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-modifier:hover {
+    background-color: #1b5e20;
+}
+
+.titre-edition {
+    color: #2e7d32;
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.input-file {
+    display: none;
+}
+
+.btn-photo {
+    padding: 8px 16px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-photo:hover {
+    background-color: #c8e6c9;
+}
+
+.label-champ {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+#vue-edition input,
+#vue-edition select,
+#vue-edition textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+#vue-edition textarea {
+    resize: vertical;
+}
+
+.aide {
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.message-erreur {
+    color: #c62828;
+    font-size: 0.9rem;
+    margin-top: 16px;
+    min-height: 20px;
+}
+
+.boutons-edition {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-enregistrer,
+.btn-annuler {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-enregistrer {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.btn-enregistrer:hover {
+    background-color: #1b5e20;
+}
+
+.btn-annuler {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.btn-annuler:hover {
+    background-color: #eee;
+}
