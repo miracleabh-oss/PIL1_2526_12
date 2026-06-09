@@ -334,7 +334,18 @@ Les utilisateurs sont ensuite classés par ordre décroissant de score ensuite c
 		  - Connexion internet
 		  </p>
 	  
+<ul>
+    <li>Cloner le dépôt en tapant dans le terminal : <code>git clone https://github.com/miracleabh-oss/PIL1_2526_12.git</code></li>
+    <li>Installer les dépendances en exécutant dans le terminal: <code>pip install flask psycopg2</code></li>
+    <li>Créer la base de données en exécutant dans le terminal : <code>psql -U postgres -c "CREATE DATABASE mentorlink"</code></li>
+    <li>Importer la structure de la base de données en exécutant dans le terminal : <code>psql -U postgres -d mentorlink -f schema.sql</code></li>
+    <li>Charger les données de test en exécutant dans le terminal : <code>psql -U postgres -d mentorlink -f seed.sql</code></li>
+    <li>Lancer l'application en exécutant : <code>python run.py</code></li>
+    <li>Ouvrir l'application dans un navigateur : <code>http://127.0.0.1:5000</code></li>
+</ul>
+	  
     <h2>10. Manuel d'utilisateur</h2>
+	  
 	  
 	 <h2>11. Technologies utilisées</h2>
 	  <table>
