@@ -1,12 +1,14 @@
   IFRI MentorLink
 
- Description
+ Description :
 
 IFRI_MentorLink est une application web développée dans le cadre du Projet Intégrateur 2025-2026 de l'Institut de Formation et de Recherche en Informatique (IFRI).
 L'objectif de cette plateforme est de faciliter la mise en relation entre les étudiants souhaitant bénéficier d'un accompagnement académique ou professionnel et ceux disposés à partager leurs connaissances et leurs compétences.
 L'application permet la création de profils utilisateurs, la publication d'offres et de demandes de mentorat, la mise en correspondance automatique des utilisateurs grâce à un algorithme de matching ainsi qu'une messagerie intégrée.
 
- Fonctionnalités
+
+ Fonctionnalités :
+ 
 
 - Inscription et connexion des utilisateurs
 - Gestion des profils utilisateurs
@@ -17,7 +19,8 @@ L'application permet la création de profils utilisateurs, la publication d'offr
 - Messagerie instantanée
 - Gestion des conversations
 
- Technologies utilisées
+
+ Technologies utilisées :
 
  Frontend
 - HTML5
@@ -37,7 +40,8 @@ Outils de collaboration
 - GitHub
 
 
-Installation
+
+Installation :
 	
 	
 	-Cloner le dépôt en tapant dans le terminal : git clone https://github.com/miracleabh-oss/PIL1_2526_12.git
@@ -57,16 +61,24 @@ Installation
 	-Ouvrir l'application dans un navigateur : http://127.0.0.1:5000
 
 
-Utilisation
+
+Utilisation :
+
+
 1.	Aller sur la page d'accueil
 2.	Cliquer sur S'inscrire et remplir le formulaire
 3.	Se connecter avec son email et mot de passe
 4.	Consulter son profil et modifier ses compétences et disponibilités
-5.	Consulter les résultats de matching pour trouver un mentor ou mentoré. Le système vous propose une liste de mentors ou mentorés selon les compétences et les horaires. Cliquez sur Contacter, pour ouvrir une discussion.
+5.	Consulter les résultats de matching pour trouver un mentor ou mentoré.
+ Le système vous propose une liste de mentors ou mentorés selon les compétences et les horaires.
+ Cliquez sur Contacter, pour ouvrir une discussion.
 6.	Envoyer un message via la messagerie intégrée
 
 
- Membres du groupe
+ 
+Membres du groupe :
+
+
 - Gedeon — Algorithme de matching
 - Ghislaine — Base de données
 - Alex — Authentification
