@@ -38,15 +38,21 @@ Outils de collaboration
 
 
 Installation
-•	Cloner le dépôt en tapant dans le terminal : git clone https://github.com/miracleabh-oss/PIL1_2526_12.git
-•	Installer les dépendances en exécutant dans le terminal : pip install flask psycopg2
-
-•	Créer la base de données en exécutant dans le terminal : psql -U postgres -c "CREATE DATABASE mentorlink
-•	Créer la base de données en exécutant dans le terminal : psql -U postgres -c "CREATE DATABASE mentorlink
-•	Importer la structure de la base de données en exécutant dans le terminal : psql -U postgres -d mentorlink -f schema.sql
-•	Charger les données de test en exécutant dans le terminal : psql -U postgres -d mentorlink -f seed.sql
-•	  Lancer l'application en exécutant : python run.py
-•	  Ouvrir l'application dans un navigateur : http://127.0.0.1:5000
+	-Cloner le dépôt en tapant dans le terminal : git clone https://github.com/miracleabh-oss/PIL1_2526_12.git
+  
+  -Installer les dépendances en exécutant dans le terminal : pip install flask psycopg2
+  
+	-Créer la base de données en exécutant dans le terminal : psql -U postgres -c "CREATE DATABASE mentorlink
+  
+	-Créer la base de données en exécutant dans le terminal : psql -U postgres -c "CREATE DATABASE mentorlink
+  
+	-Importer la structure de la base de données en exécutant dans le terminal : psql -U postgres -d mentorlink -f schema.sql
+  
+	-Charger les données de test en exécutant dans le terminal : psql -U postgres -d mentorlink -f seed.sql
+  
+	-Lancer l'application en exécutant : python run.py
+  
+	-Ouvrir l'application dans un navigateur : http://127.0.0.1:5000
 
 
 Utilisation
