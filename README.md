@@ -79,12 +79,12 @@ Utilisation :
 Membres du groupe :
 
 
-- Gédéon ABOTCHI : Algorithme de matching
-- Ghislaine  : Base de données
-- Alex FASSINOU : Authentification
-- Miraculé : Messagerie
-- Marie-Merveille GBAGUIDI : Interfaces profils et matching
-- Amos : Interfaces connexion et messagerie
+- Gédéon ABOTCHI : Frontend
+- Ghislaine ALAHOU ADJAHA  : Base de données PostgreSQL
+- Alex FASSINOU : Backend Flask
+- Melahel AKPATA : Base de données PostgreSQL
+- Marie-Merveille GBAGUIDI : Frontend-Profil et Matching
+- Amos MONGBO : Backend Flask et Algorithme de matching
 - Mahougnon Juste ADJALIAN : Documentation, README, rapport HTML et déploiement
 
  
