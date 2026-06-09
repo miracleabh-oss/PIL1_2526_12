@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport - IFRI MentorLink</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+        h1 { color: #2e7d32; text-align: center; }
+        h2 { color: #2e7d32; border-bottom: 2px solid #2e7d32; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background-color: #2e7d32; color: white; padding: 10px; }
+        td { border: 1px solid #ccc; padding: 10px; }
+        code { background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+<h1>IFRI MentorLink — Rapport de Projet</h1>
+<p style="text-align:center">PIL1_2526 — Groupe 12 — Juin 2026</p>
+
+<h2>1. Membres du groupe</h2>
+<table>
+    <tr><th>Nom</th><th>Rôle</th></tr>
+    <tr><td>Gédéon (Miracle ABOTCHI)</td><td>Chef de projet / Frontend</td></tr>
+    <tr><td>Merveille</td><td>Frontend — Profil & Matching</td></tr>
+    <tr><td>Amos (Rudy)</td><td>Backend Flask & Algorithme de matching</td></tr>
+    <tr><td>Melahel</td><td>Base de données PostgreSQL</td></tr>
+    <tr><td>Alex</td><td>Backend Flask</td></tr>
+    <tr><td>Ghislaine</td><td>Base de données</td></tr>
+    <tr><td>Juste</td><td>Documentation</td></tr>
+</table>
+
+<h2>2. Fonctionnement interne du groupe</h2>
+<p>Le groupe a travaillé de façon collaborative en utilisant Git et GitHub. Chaque membre a travaillé sur sa propre branche et les contributions ont été mergées sur la branche principale. La coordination s'est faite via WhatsApp.</p>
+
+<h2>3. Description de la conception</h2>
+<h3>Architecture</h3>
+<p>L'application suit une architecture client-serveur avec Flask comme framework backend et PostgreSQL comme base de données.</p>
+
+<h3>Structure du projet</h3>
+<pre>
+PIL1_2526_12/
+├── app/
+│   ├── routes/
+│   │   ├── auth.py        (inscription, connexion)
+│   │   ├── matching.py    (algorithme de matching)
+│   │   ├── profil.py      (gestion des profils)
+│   │   └── messagerie.py  (messagerie)
+│   ├── templates/         (pages HTML)
+│   ├── static/            (CSS, JS)
+│   └── matching.py        (algorithme de matching)
+├── schema.sql             (structure BDD)
+├── seed.sql               (données de test)
+└── run.py                 (lancement)
+</pre>
+
+<h2>4. Instructions de déploiement</h2>
+<ol>
+    <li>Cloner le dépôt : <code>git clone https://github.com/miracleabh-oss/PIL1_2526_12.git</code></li>
+    <li>Installer les dépendances : <code>pip install flask psycopg2</code></li>
+    <li>Créer la base de données : <code>psql -U postgres -c "CREATE DATABASE mentorlink"</code></li>
+    <li>Charger le schéma : <code>psql -U postgres -d mentorlink -f schema.sql</code></li>
+    <li>Charger les données de test : <code>psql -U postgres -d mentorlink -f seed.sql</code></li>
+    <li>Lancer l'application : <code>python run.py</code></li>
+    <li>Ouvrir : <code>http://127.0.0.1:5000</code></li>
+</ol>
+
+<h2>5. Manuel d'utilisation</h2>
+<ol>
+    <li>Aller sur la page d'accueil</li>
+    <li>Cliquer sur <strong>S'inscrire</strong> et remplir le formulaire</li>
+    <li>Se connecter avec son email et mot de passe</li>
+    <li>Consulter son profil et modifier ses compétences et disponibilités</li>
+    <li>Consulter les résultats de matching pour trouver un mentor ou mentoré</li>
+    <li>Envoyer un message via la messagerie intégrée</li>
+</ol>
+
+</body>
+</html>
