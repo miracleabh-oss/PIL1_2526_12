@@ -1,9 +1,30 @@
-{% extends 'base.html'%}
-{% block content %}
-<h1>Connexion</h1>
-<form method="POST" action="/connexion">
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="mot_de_passe" placeholder="Mot de passe"required>
-    <button type=" submit">Se connecter</button>
-</form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <form action="/connexion" method="POST" id="form-connexion">
+        <h1>Connexion</h1>
+     
+     <label>Email ou Téléphone</label>
+     <input type="text" id="identifiant" placeholder="Entrez votre email ou numéro">
+     <br>
+     
+     <label>Mot de passe</label>
+     <input type="password" id="password" placeholder="Entrez votre mot de passe">
+     <br>
+    
+     <button type="button" id="btn-connexion">Se connecter</button>
+
+     <p>Pas encore de compte ? <a href="/inscription">S'inscrire</a></p>
+    </form>
+    
+    <script src="{{ url_for('static', filename='connexion.js') }}"></script>
+
+</body>
+</html>
