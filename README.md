@@ -79,13 +79,13 @@ Utilisation :
 Membres du groupe :
 
 
-- Gedeon — Algorithme de matching
-- Ghislaine — Base de données
-- Alex — Authentification
-- Miraculé — Messagerie
-- Merveille — Interfaces profils et matching
-- Amos — Interfaces connexion et messagerie
-- Juste — Documentation, README, rapport HTML et déploiement
+- Gedeon : Algorithme de matching
+- Ghislaine : Base de données
+- Alex : Authentification
+- Miraculé : Messagerie
+- Merveille : Interfaces profils et matching
+- Amos : Interfaces connexion et messagerie
+- Juste : Documentation, README, rapport HTML et déploiement
 
  
  
