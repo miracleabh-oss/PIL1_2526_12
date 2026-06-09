@@ -79,7 +79,7 @@ Utilisation :
 Membres du groupe :
 
 
-- Gedeon ABOTCHI : Algorithme de matching
+- Gédéon ABOTCHI : Algorithme de matching
 - Ghislaine  : Base de données
 - Alex FASSINOU : Authentification
 - Miraculé : Messagerie
