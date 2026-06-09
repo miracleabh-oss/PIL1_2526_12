@@ -118,6 +118,7 @@
                                                                  │
                                                                  ▼
                                                              PostgreSQL
+      
     </p>
 
     <h2>5. Base de données</h2>
@@ -128,10 +129,32 @@
     </p>
     
     <p>
-      L'organisation de la base de données repose sur plusieurs tables liées entre elles. La table "users" contient les informations essentielles des utilisateurs, tandis que la table
-      "profiles" stocke les détails complémentaires tels que la filière, le niveau d'études ou la biographie. Les compétences et les besoins d'accompagnement sont gérés à travers les tables
-      "skills" et "users_skills"
+      L'organisation de la base de données repose sur plusieurs tables liées entre elles. Il s'agit des tables: 
+      
+      •	users : contient les informations d’authentification des utilisateurs (nom, prénoms, adresse e-mail, numéro de téléphone et mot de passe haché).   
+•	profiles : stocke les informations complémentaires liées aux utilisateurs telles que la filière, le niveau d’études, la biographie et les disponibilités.
+•	users_skills : table d’association permettant de relier les utilisateurs à leurs compétences ou besoins d’accompagnement.
+•	mentoring_post : enregistre les offres et demandes de mentorat publiées par les utilisateurs.
+•	matches : conserves les résultats générés par l’algorithme de matching entre mentors et mentorés.
+•	conversations : gère les échanges entre utilisateurs ayant établi une relation de mentorat.
+•	messages : stocke l’ensemble des messages envoyés au sein des conversations
+  </p>
+    
+    <p>
+      Chaque utilisateurs possède un profil unique. Un utilisateur peut disposer de plusieurs compétences et une même compétence peut être associé à plusieurs utilisateurs. 
+      Cette relation est générée  à l'aide de la table users_skills.
+      Les offres et les demandes de mentorat sont liées aux utilisateurs qui les publient. Lorsqu'une compatibilité est détectée, un enregistrement est créé dans la table matches.
+      Les utilisateurs mis en relation peuvent ensuite communiquer à travers des communications contenant plusieurs messages.
     </p>
+    <p>
+      Schéma relationnel
+    </p>
+    
+    
+    
+      
+      
+  
     
     <p>
       Le système de mentorat s'appuie sur les tables "mentoring_posts" et "matches", qui permettent respectivement de gérer les offres ou demandes de mentorat 
