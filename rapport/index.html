@@ -183,6 +183,27 @@ matches
     
 
     <h2>6. Algorithme de matching</h2>
+    <p>
+    Afin de faciliter la mise en relation entre les étudiants, IFRI_MentorLink intègre un algorithme de matching permettant de proposer automatiquement les profils 
+      les plus compatibles. Cet algorithme analyse plusieurs critères et attribue à chaque paire mentor-mentoré u score compatible compris entre 0 et 100.
+      
+	Compatibilité des compétences : 
+Le premier critère évalué concerne les compétences du mentor et les besoins d’accompagnement de mentoré. L’algorithme recherche les correspondances entre les matières maîtrisées par le mentor et les lacunes déclaré par le mentoré. Plus le nombre de matière est élevé, plus le score obtenu est important.  Ce critère représente un maximum de 50 points dans le calcul du score final.
+	Compatibilité des disponibilités :
+L’algorithme compare ensuite les disponibilités des utilisateurs afin de vérifier l’existence de créneaux horaires compatibles. Deux créneaux sont considérés comme compatible lorsqu’ils concernent le même jour et que leurs horaires se chevauchent. Ce critère représente un maximum de 30 points dans le calcul du score final.
+	Filière et niveau d’études :
+Le système prend également en compte la proximité académique des utilisateurs. Lorsque le mentor et le mentoré se trouvent dans la même filière, un bonus est accordé. Un bonus supplémentaire est accordé lorsque le mentor possède un niveau d’études supérieur à celui du mentoré. Ce critère représente un maximum de 20 points dans le calcul du score final.
+	Calcul du score final :
+Le score final est obtenu en additionnant les résultats des différents critères :
+•	Compatibilité des compétences :
+50 points maximum ;
+•	Compatibilité des disponibilités :
+30 points maximum ;
+•	Compatibilité de la filière et du niveau :
+20 points maximum.
+Les utilisateurs sont ensuite classés par ordre décroissant de score ensuite classés par ordre décroissant de score afin de proposer les correspondances les plus pertinentes. Les meilleurs résultats sont enregistrés dans la base de données puis affichés à l’utilisateur.
+
+    </p>
 
     
     <h2>7. Interfaces utilisateur</h2>
