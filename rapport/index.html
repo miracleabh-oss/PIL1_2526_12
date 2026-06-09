@@ -143,33 +143,48 @@
     <p>
       Chaque utilisateurs possède un profil unique. Un utilisateur peut disposer de plusieurs compétences et une même compétence peut être associé à plusieurs utilisateurs. 
       Cette relation est générée  à l'aide de la table users_skills.
-      Les offres et les demandes de mentorat sont liées aux utilisateurs qui les publient. Lorsqu'une compatibilité est détectée, un enregistrement est créé dans la table matches.
-      Les utilisateurs mis en relation peuvent ensuite communiquer à travers des communications contenant plusieurs messages.
-    </p>
-    <p>
-      Schéma relationnel
-    </p>
-    
-    
-    
-      
-      
-  
-    
-    <p>
       Le système de mentorat s'appuie sur les tables "mentoring_posts" et "matches", qui permettent respectivement de gérer les offres ou demandes de mentorat 
       et les propositions de mise en relation générées par l'application. Enfin, les échanges entre utilisateurs sont enregistrés dans les tables "conversations" et "messages",
       garantissent ainsi le suivi de l'historique des discussions.
-    </p>
+   </p>
     
     <p>
       Plusieurs contraintes de sécurité ont également été prévues, notamment l'unicité des adresses e-mail et des numéros de téléphone, le hachage des mots de passe avant leur 
       enregistrement ainsi que des règles empêchant certaines incohérences, comme la création d'un match entre un utilisateur et lui-même.
     </p>
+    <p>
+      Schéma relationnel :
+      
+ users
+ │
+ ├── profiles
+ │
+ ├── user_skills ─── skills
+ │
+ ├── availabilities
+ │
+ ├── mentoring_posts ─── skills
+ │        │
+ │        └── post_availabilities
+ │
+ ├── matches (mentor_id)
+ │
+ ├── matches (mentee_id)
+ │
+ └── messages (sender_id)
+
+matches
+ │
+ └── conversations
+          │
+          └── messages
+    </p>
 
     
 
     <h2>6. Algorithme de matching</h2>
+
+    
     <h2>7. Interfaces utilisateur</h2>
 
     <h2>8. Messagerie instantanée</h2>
