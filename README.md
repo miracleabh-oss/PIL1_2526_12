@@ -38,9 +38,11 @@ Outils de collaboration
 
 
 Installation
+	
+	
 	-Cloner le dépôt en tapant dans le terminal : git clone https://github.com/miracleabh-oss/PIL1_2526_12.git
   
-  -Installer les dépendances en exécutant dans le terminal : pip install flask psycopg2
+    -Installer les dépendances en exécutant dans le terminal : pip install flask psycopg2
   
 	-Créer la base de données en exécutant dans le terminal : psql -U postgres -c "CREATE DATABASE mentorlink
   
