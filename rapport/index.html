@@ -4,17 +4,94 @@
      <meta charset="UTF-8">
      <title>IFRI_MentorLink - Rapport</title>
     <style>
-		body {
-  font-family: Arial, sans-serif;
-  margin: 40px;
+		<style>
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color:#f4f7fb;
+    color:#333;
+    margin:0;
+    padding:40px;
+    line-height:1.8;
 }
-h1 {
-  text-align: center
+
+h1{
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#0f4c81,#1f6fb2);
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
-h2 {
-  color: #2c3e50;
+
+h2{
+    color:#0f4c81;
+    border-left:6px solid #1f6fb2;
+    padding-left:12px;
+    margin-top:40px;
 }
-		 }
+
+p{
+    text-align:justify;
+}
+
+section{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    margin-bottom:20px;
+    background:white;
+}
+
+table th{
+    background:#1f6fb2;
+    color:white;
+    padding:12px;
+}
+
+table td{
+    border:1px solid #d9d9d9;
+    padding:10px;
+}
+
+table tr:nth-child(even){
+    background:#f5f9ff;
+}
+
+ul{
+    padding-left:25px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+footer{
+    text-align:center;
+    margin-top:50px;
+    color:#666;
+    font-style:italic;
+}
+
+strong{
+    color:#0f4c81;
+}
+
+.code{
+    background:#f0f3f7;
+    border-left:4px solid #1f6fb2;
+    padding:10px;
+    font-family:Consolas, monospace;
+}
+</style>
 	</style>  
   </head>
   <body>
@@ -58,21 +135,47 @@ h2 {
       Afin de mener à bien notre projet, nous avons fait la répartition des tâches en fonction des compétences de chacun. 
       Cette organisation nous a permis de travailler en collaboration tout en assurant une progression efficace du developpement de l'application.
 
-      <ul>
-        <li><strong>Gedeon</strong> : Conception de l'algorithme de matching.</li>
+      <table>
+    <tr>
+        <th>Membre</th>
+        <th>Responsabilité</th>
+    </tr>
 
-        <li><strong>Ghislaine</strong> : conception de la base données, création du schéma relationnel et élaboration du script SQL.</li>
+    <tr>
+        <td>Gedeon</td>
+        <td>Conception de l'algorithme de matching</td>
+    </tr>
 
-        <li><strong>Alex</strong> : développement du système d'authentification (inscription, connexion et sécurisation des mots de passe).</li>
+    <tr>
+        <td>Ghislaine</td>
+        <td>Conception de la base de données et script SQL</td>
+    </tr>
 
-        <li><strong>Miraculé</strong> : développement du module de messagerie et gestion des échanges entre utilisateurs.</li>
+    <tr>
+        <td>Alex</td>
+        <td>Système d'authentification</td>
+    </tr>
 
-        <li><strong>Merveille</strong> : conception des interfaces liées aux profils utilisateurs, au matching et à l'affichage des résultats.</li>
+    <tr>
+        <td>Miraculé</td>
+        <td>Messagerie instantanée</td>
+    </tr>
 
-        <li><strong>Amos</strong> : conception des interfaces d'inscription, de connexion et de la messagerie.</li>
+    <tr>
+        <td>Merveille</td>
+        <td>Interfaces profils et matching</td>
+    </tr>
 
-        <li><strong>Juste</strong> : rédaction du rapport HTML, de la documentation du projet, du fichier README ainsi que des instructions de déploiement.</li>
-      </ul>
+    <tr>
+        <td>Amos</td>
+        <td>Interfaces inscription, connexion et messagerie</td>
+    </tr>
+
+    <tr>
+        <td>Juste</td>
+        <td>Rapport HTML, README et déploiement</td>
+    </tr>
+</table>
     </p>
 
     <h2>3. Organisation et répartition des tâches</h2>
@@ -222,10 +325,38 @@ Les utilisateurs sont ensuite classés par ordre décroissant de score ensuite c
     <h2>9. Instructions de déploiement</h2>
 
     <h2>10. Manuel d'utilisateur</h2>
+	  
+	 <h2>11. Technologies utilisées</h2>
+	  <table>
+    <tr>
+        <th>Composant</th>
+        <th>Technologie</th>
+    </tr>
 
-    <h2>11. Difficultés rencontrées</h2>
+    <tr>
+        <td>Frontend</td>
+        <td>HTML, CSS, JavaScript</td>
+    </tr>
 
-    <h2>12. Conclusion</h2>
+    <tr>
+        <td>Backend</td>
+        <td>Python</td>
+    </tr>
+
+    <tr>
+        <td>Base de données</td>
+        <td>PostgreSQL</td>
+    </tr>
+
+    <tr>
+        <td>Gestion de versions</td>
+        <td>Git & GitHub</td>
+    </tr>
+</table>
+
+    <h2>12. Difficultés rencontrées</h2>
+
+    <h2>13. Conclusion</h2>
 
   
     <p>Rapport du projet intégrateur 2025-2026</p>
