@@ -299,7 +299,8 @@ footer{
       
     </p>
 	  <p>
-		 Structure :
+		 L'arborescence suivante illustre la structure générale des répertoires
+		  et fichiers constituant l'application :
 		  <pre>
 PIL1_2526_12/
 
@@ -318,7 +319,26 @@ PIL1_2526_12/
 ├── seed.sql
 └── run.py
 		  </pre>
-	  </p>
+	  Le schéma suivant illustre l'architecture générale de
+	  l'application IFRI_MentorLink et les échanges entre
+	  les différents composants du système :
+	  <pre>
+Utilisateur
+     │
+     ▼
+Interface Web
+(HTML, CSS, JavaScript)
+     │
+     ▼
+Serveur Applicatif
+(Python)
+     │
+     ▼
+Base de Données
+(PostgreSQL)
+	  </pre>
+
+  </p>
 
     <h2>5. Base de données</h2>
     <p>
@@ -358,6 +378,21 @@ PIL1_2526_12/
       Plusieurs contraintes de sécurité ont également été prévues, notamment l'unicité des adresses e-mail et des numéros de téléphone, 
 	  le hachage des mots de passe avant leur 
       enregistrement ainsi que des règles empêchant certaines incohérences, comme la création d'un match entre un utilisateur et lui-même.
+	Le schéma suivant présente une vue simplifiée de cette organisation :
+	  <pre>
+users
+│
+├── profiles
+├── user_skills
+│   └── skills
+├── availabilities
+├── mentoring_posts
+│   ├── skills
+│   └── post_availabilities
+└── matches
+    └── conversations
+        └── messages
+		</pre>
     </p>
     
 
