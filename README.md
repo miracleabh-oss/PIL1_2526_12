@@ -1,4 +1,4 @@
-  IFRI_MentorLink 
+  IFRI MentorLink
 
  Description
 
@@ -36,24 +36,6 @@ Outils de collaboration
 - Git
 - GitHub
 
- Structure du projet
-
-PIL1_2526_12/
-
-├── app/
-│   ├── routes/
-│   │   ├── auth.py
-│   │   ├── matching.py
-│   │   ├── profil.py
-│   │   └── messagerie.py
-│   │
-│   ├── templates/
-│   ├── static/
-│   └── matching.py
-│
-├── schema.sql
-├── seed.sql
-└── run.py
 
 Installation
 •	Cloner le dépôt en tapant dans le terminal : git clone https://github.com/miracleabh-oss/PIL1_2526_12.git
@@ -85,6 +67,8 @@ Utilisation
 - Amos — Interfaces connexion et messagerie
 - Juste — Documentation, README, rapport HTML et déploiement
 
+ 
+ 
  Projet académique
 
 Projet Intégrateur 2025-2026
