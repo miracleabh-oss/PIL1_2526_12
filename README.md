@@ -79,13 +79,13 @@ Utilisation :
 Membres du groupe :
 
 
-- Gedeon : Algorithme de matching
-- Ghislaine : Base de données
-- Alex : Authentification
+- Gedeon ABOTCHI : Algorithme de matching
+- Ghislaine  : Base de données
+- Alex FASSINOU : Authentification
 - Miraculé : Messagerie
-- Merveille : Interfaces profils et matching
+- Marie-Merveille GBAGUIDI : Interfaces profils et matching
 - Amos : Interfaces connexion et messagerie
-- Juste : Documentation, README, rapport HTML et déploiement
+- Mahougnon Juste ADJALIAN : Documentation, README, rapport HTML et déploiement
 
  
  
