@@ -1,0 +1,38 @@
+# --- Environnements Virtuels Python ---
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Caches Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Fichiers d'environnement et secrets (sécurité) ---
+.env
+.flaskenv
+instance/
+dist/
+build/
+*.egg-info/
+
+# --- Systèmes d'exploitation ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Fichiers d'IDE (Optionnel mais recommandé) ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
