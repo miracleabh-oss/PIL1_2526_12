@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MentorLink{% endblock %} — IFRI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="app-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <i data-lucide="graduation-cap" class="logo-icon"></i>
+            <span class="logo-text">MentorLink</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('auth.accueil') }}" class="nav-item {% if request.endpoint == 'auth.accueil' %}active{% endif %}">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span class="nav-label">Accueil</span>
+            </a>
+            <a href="{{ url_for('matching.demander_aide') }}" class="nav-item {% if request.endpoint == 'matching.demander_aide' %}active{% endif %}">
+                <i data-lucide="help-circle" class="nav-icon"></i>
+                <span class="nav-label">Demander une aide</span>
+            </a>
+            <a href="{{ url_for('matching.proposer_aide') }}" class="nav-item {% if request.endpoint == 'matching.proposer_aide' %}active{% endif %}">
+                <i data-lucide="hand-helping" class="nav-icon"></i>
+                <span class="nav-label">Proposer une aide</span>
+            </a>
+            <a href="{{ url_for('matching.voir_matching') }}" class="nav-item {% if request.endpoint == 'matching.voir_matching' %}active{% endif %}">
+                <i data-lucide="users" class="nav-icon"></i>
+                <span class="nav-label">Matching</span>
+            </a>
+            <a href="{{ url_for('messagerie.voir_messagerie') }}" class="nav-item {% if request.endpoint == 'messagerie.voir_messagerie' %}active{% endif %}">
+                <i data-lucide="message-square" class="nav-icon"></i>
+                <span class="nav-label">Messagerie</span>
+            </a>
+            <a href="{{ url_for('agenda.voir_agenda') }}" class="nav-item {% if request.endpoint == 'agenda.voir_agenda' %}active{% endif %}">
+                <i data-lucide="calendar" class="nav-icon"></i>
+                <span class="nav-label">Agenda</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="{{ url_for('profil.voir_profil') }}" class="nav-item {% if request.endpoint == 'profil.voir_profil' %}active{% endif %}">
+                <i data-lucide="user" class="nav-icon"></i>
+                <span class="nav-label">Mon profil</span>
+            </a>
+            <a href="{{ url_for('profil.parametres') }}" class="nav-item {% if request.endpoint == 'profil.parametres' %}active{% endif %}">
+                <i data-lucide="settings" class="nav-icon"></i>
+                <span class="nav-label">Paramètres</span>
+            </a>
+            <a href="{{ url_for('auth.deconnexion') }}" class="nav-item deconnexion">
+                <i data-lucide="log-out" class="nav-icon"></i>
+                <span class="nav-label">Déconnexion</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>lucide.createIcons();</script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

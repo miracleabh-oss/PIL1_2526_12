@@ -1,5 +1,5 @@
 -- =============================================================
--- IFRI_MentorLink — Données de test (seed) Ce fichier est optionnel et n'est pas le shema de la base de donnée.
+-- IFRI_MentorLink — Données de test (seed)
 -- À exécuter APRÈS schema.sql
 -- Les mots de passe hashés correspondent à "password123"
 -- =============================================================

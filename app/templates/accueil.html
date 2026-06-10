@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Bonjour, {{ user.prenom }} 👋</h1>
+    <p class="subtitle">Que souhaitez-vous faire aujourd'hui ?</p>
+</div>
+
+<div class="accueil-grid">
+    <a href="{{ url_for('matching.demander_aide') }}" class="accueil-card card-demande">
+        <div class="card-icon"><i data-lucide="help-circle"></i></div>
+        <h3>Demander une aide</h3>
+        <p>Trouvez le mentor idéal pour une matière où vous bloquez.</p>
+    </a>
+    <a href="{{ url_for('matching.proposer_aide') }}" class="accueil-card card-offre">
+        <div class="card-icon"><i data-lucide="hand-helping"></i></div>
+        <h3>Proposer une aide</h3>
+        <p>Partagez vos compétences et devenez mentor pour vos camarades.</p>
+    </a>
+    <a href="{{ url_for('matching.voir_matching') }}" class="accueil-card card-matching">
+        <div class="card-icon"><i data-lucide="users"></i></div>
+        <h3>Matching</h3>
+        <p>Consultez vos suggestions calculées par l'algorithme.</p>
+    </a>
+    <a href="{{ url_for('messagerie.voir_messagerie') }}" class="accueil-card card-messagerie">
+        <div class="card-icon"><i data-lucide="message-square"></i></div>
+        <h3>Messagerie</h3>
+        <p>Échangez en temps réel avec vos mentors et mentorés.</p>
+    </a>
+    <a href="{{ url_for('agenda.voir_agenda') }}" class="accueil-card card-agenda">
+        <div class="card-icon"><i data-lucide="calendar"></i></div>
+        <h3>Agenda</h3>
+        <p>Retrouvez vos créneaux de sessions acceptées.</p>
+    </a>
+</div>
+{% endblock %}

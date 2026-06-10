@@ -1,4 +1,4 @@
--- Fcihier présentant la structure de la base de données finale
+
 -- Extensions utiles
 CREATE EXTENSION IF NOT EXISTS pgcrypto;  -- pour gen_random_uuid() si besoin
 
