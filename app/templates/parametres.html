@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Paramètres{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>⚙️ Paramètres</h1>
+</div>
+<div class="form-card">
+    <h2>Informations de connexion</h2>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="param-email" value="{{ user.email }}">
+    </div>
+    <div class="form-group">
+        <label>Numéro de téléphone</label>
+        <input type="tel" id="param-telephone" value="{{ user.telephone }}">
+    </div>
+    <hr>
+    <h2>Changer le mot de passe</h2>
+    <div class="form-group">
+        <label>Ancien mot de passe</label>
+        <input type="password" id="param-ancien-mdp" placeholder="Votre mot de passe actuel">
+    </div>
+    <div class="form-group">
+        <label>Nouveau mot de passe</label>
+        <input type="password" id="param-nouveau-mdp" placeholder="Nouveau mot de passe">
+    </div>
+    <button class="btn-primary" id="btn-sauver-params">Enregistrer les modifications</button>
+    <p id="msg-params" class="msg-retour"></p>
+    <hr>
+    <a href="{{ url_for('profil.voir_profil') }}" class="btn-secondary">👤 Voir mon profil</a>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+document.getElementById('btn-sauver-params').addEventListener('click', async () => {
+    const data = {
+        email:      document.getElementById('param-email').value,
+        telephone:  document.getElementById('param-telephone').value,
+        ancien_mdp: document.getElementById('param-ancien-mdp').value,
+        nouveau_mdp:document.getElementById('param-nouveau-mdp').value
+    };
+    const r = await fetch('/parametres', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)});
+    const d = await r.json();
+    const msg = document.getElementById('msg-params');
+    msg.textContent = d.message;
+    msg.className   = 'msg-retour ' + (d.success ? 'msg-ok' : 'msg-err');
+});
+</script>
+{% endblock %}

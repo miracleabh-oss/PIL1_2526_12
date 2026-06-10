@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Bonjour, {{ user.prenom }} 👋</h1>
+    <p class="subtitle">Que souhaitez-vous faire aujourd'hui ?</p>
+</div>
+
+<div class="accueil-grid">
+    <a href="{{ url_for('matching.demander_aide') }}" class="accueil-card card-demande">
+        <div class="card-icon">🙋</div>
+        <h3>Demander une aide</h3>
+        <p>Trouvez un mentor pour une matière où vous avez besoin d'aide.</p>
+    </a>
+    <a href="{{ url_for('matching.proposer_aide') }}" class="accueil-card card-offre">
+        <div class="card-icon">🤝</div>
+        <h3>Proposer une aide</h3>
+        <p>Partagez vos compétences avec vos camarades qui en ont besoin.</p>
+    </a>
+    <a href="{{ url_for('matching.voir_matching') }}" class="accueil-card card-matching">
+        <div class="card-icon">⚡</div>
+        <h3>Matching</h3>
+        <p>Consultez vos suggestions de mentors et mentorés.</p>
+    </a>
+    <a href="{{ url_for('messagerie.voir_messagerie') }}" class="accueil-card card-messagerie">
+        <div class="card-icon">💬</div>
+        <h3>Messagerie</h3>
+        <p>Échangez avec vos mentors et mentorés.</p>
+    </a>
+    <a href="{{ url_for('agenda.voir_agenda') }}" class="accueil-card card-agenda">
+        <div class="card-icon">📅</div>
+        <h3>Agenda</h3>
+        <p>Retrouvez vos créneaux de sessions de mentorat.</p>
+    </a>
+    <a href="{{ url_for('profil.voir_profil') }}" class="accueil-card card-profil">
+        <div class="card-icon">👤</div>
+        <h3>Mon profil</h3>
+        <p>Complétez votre profil pour de meilleurs matchs.</p>
+    </a>
+</div>
+{% endblock %}

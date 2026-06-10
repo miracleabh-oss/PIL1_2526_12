@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Messagerie{% endblock %}
+
+{% block content %}
+<div class="messagerie-layout">
+
+    <!-- Liste des conversations -->
+    <div class="conv-list">
+        <div class="conv-list-header">
+            <h2>💬 Conversations</h2>
+        </div>
+        {% if conversations %}
+            {% for c in conversations %}
+            <a href="{{ url_for('messagerie.voir_messagerie', conv=c.id) }}"
+               class="conv-item {% if conv_active and conv_active.id == c.id %}active{% endif %}">
+                <img src="https://ui-avatars.com/api/?name={{ c.autre.prenom }}+{{ c.autre.nom }}&background=2e7d32&color=fff&size=48"
+                     class="conv-avatar">
+                <div class="conv-info">
+                    <div class="conv-nom">{{ c.autre.prenom }} {{ c.autre.nom }}</div>
+                    <div class="conv-dernier">
+                        {% if c.dernier_msg %}
+                            {{ c.dernier_msg.contenu[:40] }}{% if c.dernier_msg.contenu|length > 40 %}…{% endif %}
+                        {% else %}
+                            Nouvelle conversation
+                        {% endif %}
+                    </div>
+                </div>
+                {% if c.non_lus > 0 %}
+                    <span class="badge-non-lus">{{ c.non_lus }}</span>
+                {% endif %}
+            </a>
+            {% endfor %}
+        {% else %}
+            <p class="empty-hint">Aucune conversation. Acceptez un match pour commencer à discuter.</p>
+        {% endif %}
+    </div>
+
+    <!-- Zone de chat -->
+    <div class="chat-zone">
+        {% if conv_active and autre_actif %}
+            <div class="chat-header">
+                <img src="https://ui-avatars.com/api/?name={{ autre_actif.prenom }}+{{ autre_actif.nom }}&background=2e7d32&color=fff&size=48"
+                     class="conv-avatar">
+                <div>
+                    <div class="chat-nom">{{ autre_actif.prenom }} {{ autre_actif.nom }}</div>
+                    <div class="chat-statut">En ligne</div>
+                </div>
+            </div>
+
+            <div class="messages-zone" id="messages-zone">
+                {% for msg in messages_actifs %}
+                    <div class="message {% if msg.sender_id == user.id %}message-moi{% else %}message-autre{% endif %}">
+                        <div class="message-bulle">{{ msg.contenu }}</div>
+                        <div class="message-heure">{{ msg.sent_at.strftime('%H:%M') }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="chat-input-zone">
+                <input type="text" id="input-message" placeholder="Écrire un message..." autocomplete="off">
+                <button id="btn-envoyer" class="btn-envoyer">➤</button>
+            </div>
+
+            <script>
+                const CONV_ID  = {{ conv_active.id }};
+                const USER_ID  = {{ user.id }};
+            </script>
+        {% else %}
+            <div class="chat-vide">
+                <span>💬</span>
+                <p>Sélectionnez une conversation pour commencer.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='messagerie.js') }}"></script>
+{% endblock %}

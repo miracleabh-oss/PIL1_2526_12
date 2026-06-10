@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MentorLink{% endblock %} — IFRI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-icon">🎓</span>
+            <span class="logo-text">MentorLink</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('auth.accueil') }}"       class="nav-item {% if request.endpoint == 'auth.accueil' %}active{% endif %}">
+                <span class="nav-icon">🏠</span><span>Accueil</span>
+            </a>
+            <a href="{{ url_for('matching.demander_aide') }}" class="nav-item {% if request.endpoint == 'matching.demander_aide' %}active{% endif %}">
+                <span class="nav-icon">🙋</span><span>Demander une aide</span>
+            </a>
+            <a href="{{ url_for('matching.proposer_aide') }}" class="nav-item {% if request.endpoint == 'matching.proposer_aide' %}active{% endif %}">
+                <span class="nav-icon">🤝</span><span>Proposer une aide</span>
+            </a>
+            <a href="{{ url_for('matching.voir_matching') }}" class="nav-item {% if request.endpoint == 'matching.voir_matching' %}active{% endif %}">
+                <span class="nav-icon">⚡</span><span>Matching</span>
+            </a>
+            <a href="{{ url_for('messagerie.voir_messagerie') }}" class="nav-item {% if request.endpoint == 'messagerie.voir_messagerie' %}active{% endif %}">
+                <span class="nav-icon">💬</span><span>Messagerie</span>
+            </a>
+            <a href="{{ url_for('agenda.voir_agenda') }}" class="nav-item {% if request.endpoint == 'agenda.voir_agenda' %}active{% endif %}">
+                <span class="nav-icon">📅</span><span>Agenda</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="{{ url_for('profil.voir_profil') }}" class="nav-item {% if request.endpoint == 'profil.voir_profil' %}active{% endif %}">
+                <span class="nav-icon">👤</span><span>Mon profil</span>
+            </a>
+            <a href="{{ url_for('profil.parametres') }}" class="nav-item {% if request.endpoint == 'profil.parametres' %}active{% endif %}">
+                <span class="nav-icon">⚙️</span><span>Paramètres</span>
+            </a>
+            <a href="{{ url_for('auth.deconnexion') }}" class="nav-item deconnexion">
+                <span class="nav-icon">🚪</span><span>Déconnexion</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

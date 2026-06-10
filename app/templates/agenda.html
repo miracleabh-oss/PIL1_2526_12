@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Agenda{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>📅 Agenda</h1>
+    <p class="subtitle">Vos créneaux de sessions de mentorat avec vos matchs acceptés.</p>
+</div>
+
+{% if sessions %}
+    {% for s in sessions %}
+    <div class="agenda-card">
+        <div class="agenda-header">
+            <img src="https://ui-avatars.com/api/?name={{ s.autre.prenom }}+{{ s.autre.nom }}&background=2e7d32&color=fff&size=48" class="conv-avatar">
+            <div>
+                <h3>{{ s.autre.prenom }} {{ s.autre.nom }}</h3>
+                <span class="role-badge">Vous êtes : {{ s.role }}</span>
+            </div>
+            <a href="{{ url_for('messagerie.voir_messagerie') }}" class="btn-primary btn-sm">💬 Message</a>
+        </div>
+
+        {% if s.creneaux_communs %}
+        <div class="creneaux-liste">
+            <p class="label-small">Créneaux disponibles en commun :</p>
+            {% for c in s.creneaux_communs %}
+                <span class="creneau-badge">{{ c.jour }} · {{ c.heure_debut }} – {{ c.heure_fin }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p class="empty-hint">Aucun créneau commun trouvé. Mettez à jour vos disponibilités.</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% else %}
+    <div class="empty-state">
+        <span>📅</span>
+        <p>Aucun match actif. Acceptez un match pour voir vos sessions ici.</p>
+        <a href="{{ url_for('matching.voir_matching') }}" class="btn-primary">Voir le matching</a>
+    </div>
+{% endif %}
+{% endblock %}

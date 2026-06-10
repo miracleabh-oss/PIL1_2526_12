@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Demander une aide{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>🙋 Demander une aide</h1>
+    <p class="subtitle">Décrivez votre besoin et l'algorithme vous trouvera le mentor idéal.</p>
+</div>
+<div class="form-card">
+    <div class="form-group">
+        <label>Matière concernée</label>
+        <select id="aide-skill">
+            <option value="">Choisir une matière</option>
+            {% for s in skills %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Format souhaité</label>
+        <div class="radio-group">
+            {% for f in formats %}
+            <label class="radio-label">
+                <input type="radio" name="format" value="{{ f }}"> {{ f }}
+            </label>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description <small>(facultatif)</small></label>
+        <textarea id="aide-desc" rows="3" placeholder="Précisez ce sur quoi vous bloquez..."></textarea>
+    </div>
+    <button class="btn-primary" id="btn-soumettre-demande">Soumettre et voir les matchs</button>
+    <p id="msg-aide" class="msg-retour"></p>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+document.getElementById('btn-soumettre-demande').addEventListener('click', async () => {
+    const skill  = document.getElementById('aide-skill').value;
+    const format = document.querySelector('input[name="format"]:checked')?.value;
+    const desc   = document.getElementById('aide-desc').value;
+    if (!skill || !format) { document.getElementById('msg-aide').textContent = 'Remplissez tous les champs.'; return; }
+    const r = await fetch('/demander-aide', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({skill, format, description: desc})});
+    const d = await r.json();
+    if (d.success) window.location.href = d.redirect;
+});
+</script>
+{% endblock %}

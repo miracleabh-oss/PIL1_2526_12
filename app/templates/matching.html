@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Matching{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>⚡ Matching</h1>
+    <p class="subtitle">Vos suggestions personnalisées basées sur votre profil.</p>
+</div>
+
+<!-- Mentors suggérés -->
+<section class="matching-section">
+    <h2>🎯 Mentors suggérés pour vous</h2>
+    {% if resultats_mentors %}
+        <div class="cards-matching">
+        {% for r in resultats_mentors %}
+            <div class="carte-match">
+                <div class="carte-gauche">
+                    <img src="https://ui-avatars.com/api/?name={{ r.prenom }}+{{ r.nom }}&background=1565c0&color=fff&size=64" class="photo-match">
+                    <div>
+                        <h3>{{ r.prenom }} {{ r.nom }}</h3>
+                        <p class="role-badge">Mentor · {{ r.filiere }} · L{{ r.niveau }}</p>
+                    </div>
+                </div>
+                <div class="carte-centre">
+                    <p class="label-small">Compétences correspondantes</p>
+                    <div class="tags">
+                        {% for c in (r.competences or r.matieres_fortes or r.points_forts or [])[:4] %}
+                            <span class="tag tag-fort">{{ c }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="carte-droite">
+                    <div class="score-circle">{{ r.score | int }}%</div>
+                    <button class="btn-accepter" data-id="{{ r.id }}" data-role="mentee">Choisir</button>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-hint">Complétez votre profil (lacunes + disponibilités) pour voir des suggestions.</p>
+    {% endif %}
+</section>
+
+<!-- Mentorés suggérés -->
+<section class="matching-section">
+    <h2>🌱 Étudiants à qui vous pouvez enseigner</h2>
+    {% if resultats_mentores %}
+        <div class="cards-matching">
+        {% for r in resultats_mentores %}
+            <div class="carte-match">
+                <div class="carte-gauche">
+                    <img src="https://ui-avatars.com/api/?name={{ r.prenom }}+{{ r.nom }}&background=2e7d32&color=fff&size=64" class="photo-match">
+                    <div>
+                        <h3>{{ r.prenom }} {{ r.nom }}</h3>
+                        <p class="role-badge">Mentoré · {{ r.filiere }} · L{{ r.niveau }}</p>
+                    </div>
+                </div>
+                <div class="carte-centre">
+                    <p class="label-small">Lacunes que vous couvrez</p>
+                    <div class="tags">
+                        {% for l in (r.lacunes or r.matieres_faibles or r.points_faibles or [])[:4] %}
+                            <span class="tag tag-lacune">{{ l }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="carte-droite">
+                    <div class="score-circle score-vert">{{ r.score | int }}%</div>
+                    <button class="btn-accepter" data-id="{{ r.id }}" data-role="mentor">Accepter</button>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-hint">Complétez vos compétences fortes pour voir des étudiants à aider.</p>
+    {% endif %}
+</section>
+
+<!-- Matchs acceptés -->
+{% if mes_matchs %}
+<section class="matching-section">
+    <h2>✅ Vos matchs actifs</h2>
+    <div class="cards-matching">
+    {% for m in mes_matchs %}
+        {% set autre = m.mentee if m.mentor_id == user.id else m.mentor %}
+        {% set role  = 'Mentor de' if m.mentor_id == user.id else 'Mentoré par' %}
+        <div class="carte-match carte-acceptee">
+            <div class="carte-gauche">
+                <img src="https://ui-avatars.com/api/?name={{ autre.prenom }}+{{ autre.nom }}&background=555&color=fff&size=64" class="photo-match">
+                <div>
+                    <h3>{{ autre.prenom }} {{ autre.nom }}</h3>
+                    <p class="role-badge">{{ role }}</p>
+                </div>
+            </div>
+            <div class="carte-droite">
+                <a href="{{ url_for('messagerie.voir_messagerie') }}" class="btn-primary btn-sm">💬 Message</a>
+                <a href="{{ url_for('agenda.voir_agenda') }}" class="btn-secondary btn-sm">📅 Agenda</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<div id="toast-match" class="toast cache">✅ Match accepté ! Conversation disponible dans la messagerie.</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='matching.js') }}"></script>
+{% endblock %}
