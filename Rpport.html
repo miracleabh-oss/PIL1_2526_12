@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+     <meta charset="UTF-8">
+     <title>IFRI_MentorLink - Rapport Officiel</title>
+    <style>
+	  body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef3f8;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+    line-height: 1.8;
+}
+
+/* Titre principal */
+h1{
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #0f4c81, #1f6fb2);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Bloc d'informations */
+.infos{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Sections */
+section{
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Titres de section */
+h2{
+    color: #0f4c81;
+    border-left: 6px solid #1f6fb2;
+    padding-left: 12px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Sous-titres */
+h3{
+    color: #1f6fb2;
+    margin-top: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Paragraphes */
+p{
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Listes */
+ul, ol{
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+/* Tableaux */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+table th{
+    background: linear-gradient(135deg, #0f4c81, #1f6fb2);
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+table td{
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px;
+}
+
+table tr:nth-child(even){
+    background: #f5f9ff;
+}
+
+table tr:hover{
+    background: #e8f2ff;
+}
+
+/* Code et commandes */
+code{
+    background: #eef5ff;
+    color: #0f4c81;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 0.95em;
+}
+
+/* Schémas ou arborescences */
+pre{
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    font-family: Consolas, monospace;
+}
+
+/* Texte important */
+strong{
+    color: #0f4c81;
+}
+
+/* Pied de page */
+footer{
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+    border-top: 1px solid #ccc;
+}
+	</style>  
+  </head>
+  <body>
+    <h1>IFRI_MentorLink</h1>
+	  <div class="infos">
+    <strong>Projet :</strong> IFRI_MentorLink<br>
+    <strong>Groupe :</strong> Équipe 12<br>
+    <strong>Année académique :</strong> 2025-2026<br>
+    <strong>IFRI - Université d'Abomey-Calavi</strong>
+	  </div>
+
+    <p style="text-align: center;">
+      Projet intégrateur 2025-2026<br>
+      Institut de Formation et de Recherche en Informatique (IFRI)<br>
+      Université d'Abomey-Calavi
+    </p>
+    
+    <h2>1. Présentation du projet</h2>
+    <p>
+      Dans le cadre du projet intégrateur 2025-2026 de l'Institut de Formation et de Recherche en Informatique (IFRI),
+	  notre équipe a développé une application web dénommée <strong>IFRI_MentorLink</strong>.
+    </p>
+    <p>
+      Cette plateforme a pour objectif de faciliter la mise en relation des étudiants souhaitant bénéficier 
+	  d'un accompagnement académique avec ceux disposés à partager leurs connaissances et leurs compétences. 
+	  Elle constitue ainsi un espace d'échange et de collaboration favorisant l'entraide entre les membres de la communauté estudiantine de l'IFRI.
+    </p>
+    <p>
+      L'application permet à chaque utilisateur de créer un profil personnalisé contenant notamment ses compétences, 
+	  ses domaines de maîtrise, ses besoins d'accompagnement ainsi que ses disponibilités. Les étudiants peuvent ensuite publier des offres ou des demandes de mentorat selon leurs objectifs.
+    </p>
+    <p>
+      Afin d'accroitre l'expérience utilisateur, un système de mise en correspondance analyse les informations fournies 
+	  by les utilisateurs et propose automatiquement les profils les plus pertinents. Une messagerie intégrée permet également aux mentors et mentorés de communiquer facilement et d'organiser leurs séances d'accompagnement.
+    </p>
+    <p>
+      À travers ce projet, nous avons mis en pratique les connaissances acquises au cours de notre formation, 
+	  notamment en développement web, en conception de base de données et en programmation asynchrone.
+    </p>
+
+    <h2>2. Présentation du groupe et répartition des rôles</h2>
+    <p>
+      Notre équipe, l'<strong>EQUIPE 12</strong>, est constituée de sept étudiants de l'IFRI inscrits dans différentes spécialités. 
+      Afin de mener à bien notre projet, nous avons procédé à la répartition des tâches en fonction des compétences et des appétences de chacun. 
+      Cette organisation rigoureuse nous a permis de travailler en parfaite synergie tout en assurant une progression fluide de l'application.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Membre</th>
+                <th>Responsabilité</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gédéon ABOTCHI</td>
+                <td>Frontend</td>
+            </tr>
+            <tr>
+                <td>Ghislaine ALAHOU ADJAHA</td>
+                <td>Messagerie</td>
+            </tr>
+            <tr>
+                <td>Alex FASSINOU</td>
+                <td>Backend Flask</td>
+            </tr>
+            <tr>
+                <td>Melahel AKPATA</td>
+                <td>Base de données (PostgreSQL & Modélisation)</td>
+            </tr>
+            <tr>
+                <td>Marie-Merveille GBAGUIDI</td>
+                <td>Frontend - Profil et Matching</td>
+            </tr>
+            <tr>
+                <td>Amos MONGBO</td>
+                <td>Backend Flask et Algorithme de Matching</td>
+            </tr>
+            <tr>
+                <td>Mahougnon Juste ADJALIAN</td>
+                <td>Rapport HTML, README et Déploiement</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Organisation et méthodologie de travail</h2>
+    <p>
+      Pour mener ce projet à terme dans les délais impartis, nous avons choisi de segmenter les différentes tâches dès le coup d'envoi. Cette organisation modulaire a permis de travailler simultanément sur les couches Frontend, Backend et Base de données.
+    </p>
+    <p>
+      Tout au long du cycle de développement, nous avons utilisé les systèmes de contrôle de version <strong>Git</strong> et <strong>GitHub</strong> pour centraliser notre code, suivre les modifications et résoudre les conflits d'intégration. Chaque participant a opéré sur des branches thématiques dédiées avant de fusionner son code après revue par les pairs.
+    </p>
+    <p>
+      Des points de synchronisation réguliers nous ont permis de suivre l'état d'avancement, de lever les blocages techniques et d'ajuster l'algorithme de matching au besoin. Cette communication continue a été la clé de voûte de notre réussite collective.
+    </p>
+
+    <h2>4. Architecture du système</h2>
+    <p>
+      L'application IFRI_MentorLink est conçue selon une architecture <strong>Client-Serveur</strong> découplée. Cette approche garantit une excellente séparation des préoccupations, simplifiant la maintenance corrective et les évolutions futures.
+    </p>
+    <ul>
+      <li><strong>La partie cliente (Frontend) :</strong> Constituée d'interfaces web dynamiques développées en HTML5, CSS3 et JavaScript. Elle gère les interactions des utilisateurs (inscription, gestion des profils, recherche et chat en temps réel).</li>
+      <li><strong>La partie serveur (Backend) :</strong> Développée en Python via le framework Flask. Elle orchestre la logique métier, l'authentification sécurisée, l'exécution de l'algorithme de correspondance et les appels à la base de données.</li>
+      <li><strong>La persistance des données :</strong> Repose sur un système de gestion de base de données relationnelle PostgreSQL, qui assure l'intégrité et la robustesse du stockage.</li>
+    </ul>
+    
+    <h3>Structure générale du projet</h3>
+    <p>L'arborescence exacte suivante illustre la structure physique des répertoires et fichiers constituant l'application :</p>
+    <pre>
+PIL1_2526_12/
+|__ rapport.html
+├── run.py              # Point d'entrée — lancer l'application
+├── config.py           # Configuration (BDD, clé secrète)
+├── schema.sql          # Création des tables
+├── seed.sql            # Données de test
+├── requirements.txt    # Dépendances Python
+├── DATABASE.md         # Documentation technique de la BDD
+└── app/
+    ├── models.py       # Modèles SQLAlchemy
+    ├── matching.py     # Algorithme de matching
+    ├── routes/         # Routes Flask (auth, profil, matching, messagerie, agenda)
+    ├── templates/      # Pages HTML (Jinja2)
+    └── static/         # CSS, JavaScript, images uploadées
+    </pre>
+
+    <h3>Flux d'échange des données</h3>
+    <p>Le schéma logique ci-dessous représente le circuit des requêtes au sein de notre infrastructure :</p>
+    <pre>
+Utilisateur
+     │
+     ▼
+Interface Web (HTML, CSS, JavaScript)
+     │
+     ▼
+Serveur Applicatif (Python / Flask)
+     │
+     ▼
+Base de Données (PostgreSQL)
+    </pre>
+
+    <h2>5. Base de données</h2>
+    <p>
+      La base de données de l'application IFRI_MentorLink a été entièrement modélisée et implémentée sous <strong>PostgreSQL</strong> afin de garantir la cohérence transactionnelle et une parfaite intégrité référentielle. Elle centralise les données requises par les différentes briques applicatives.
+    </p>
+    
+    <p>L'architecture relationnelle s'appuie sur dix tables interconnectées :</p>
+    <ul>
+      <li><strong>users :</strong> Stocke les identifiants d’authentification essentiels (nom, prénoms, e-mail unique, téléphone et mot de passe haché via bcrypt).</li>
+      <li><strong>profiles :</strong> Regroupe les attributs de profil (filière, niveau d’études, biographie).</li>
+      <li><strong>skills :</strong> Catalogue global des compétences et matières académiques disponibles.</li>
+      <li><strong>user_skills :</strong> Table d’association gérant la relation plusieurs-à-plusieurs (Many-to-Many) entre les utilisateurs, leurs forces (mentors) et leurs besoins (mentorés).</li>
+      <li><strong>availabilities :</strong> Enregistre les plages horaires globales des étudiants.</li>
+      <li><strong>mentoring_posts :</strong> Contient les annonces ciblées d'offres et de demandes publiées.</li>
+      <li><strong>post_availabilities :</strong> Fait le pont entre les annonces et les contraintes horaires spécifiques.</li>
+      <li><strong>matches :</strong> Consigne l'historique des liaisons suggérées et validées par l'algorithme.</li>
+      <li><strong>conversations & messages :</strong> Orchestrent les structures de données indispensables au fonctionnement de la messagerie instantanée.</li>
+    </ul>
+    
+    <p>L'arborescence logique ci-dessous résume les dépendances et cascades des entités :</p>
+    <pre>
+users
+│
+├── profiles
+├── user_skills ── skills
+├── availabilities
+├── mentoring_posts
+│   ├── skills
+│   └── post_availabilities
+└── matches
+    └── conversations
+        └── messages
+    </pre>
+
+    <h2>6. Algorithme de matching</h2>
+    <p>
+      Le cœur de la valeur ajoutée d'IFRI_MentorLink réside dans son algorithme de correspondance automatisé. Pour chaque couple Mentor/Mentoré potentiel, le système évalue la pertinence de l'association sur une échelle de <strong>0 à 100 points</strong>, pondérée comme suit :
+    </p>
+    <ul>
+      <li><strong>Compatibilité des compétences (50 points max) :</strong> Analyse croisée entre les matières maîtrisées par le mentor et les lacunes exprimées par le mentoré. Plus l'intersection est grande, plus le score croît.</li>
+      <li><strong>Compatibilité des disponibilités (30 points max) :</strong> Vérification de l'existence de plages communes. Les créneaux matchent s'ils correspondent au même jour et présentent une intersection horaire (chevauchement).</li>
+      <li><strong>Proximité académique (20 points max) :</strong> Un bonus de points est alloué si les deux étudiants partagent la même filière à l'IFRI, combiné à un incrément si le mentor dispose d'un niveau d'études strictement supérieur au demandeur.</li>
+    </ul>
+
+    <h2>7. Interfaces utilisateur & Modules</h2>
+    <h3>7.1 Authentification et Gestion de Profil</h3>
+    <p>
+      Les interfaces d'inscription et de connexion valident les contraintes de sécurité en amont. À l'inscription, l'utilisateur est invité à renseigner son cursus (Filière, Niveau). Une fois authentifié, l'espace "Mon Profil" lui donne un contrôle complet sur la mise à jour dynamique de ses compétences et de son calendrier de disponibilités.
+    </p>
+	
+    <h3>7.2 Messagerie instantanée</h3>
+    <p>
+      Le module de messagerie permet d'engager le dialogue dès qu'une correspondance est validée (clic sur le bouton "Contacter"). L'interface est scindée en deux panneaux : le volet latéral gauche récapitule les discussions en cours, tandis que la zone principale affiche le flux des messages et la zone d'envoi textuel. Le stockage est rendu persistant via les tables dédiées.
+    </p>
+
+    <h2>8. Guide officiel de déploiement</h2>
+    <p>Cette section détaille la procédure standard pour installer, configurer et exécuter l'application IFRI_MentorLink sur un nouvel environnement de production ou de développement.</p>
+    
+    <h3>8.1 Prérequis système</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Outil</th>
+                <th>Version minimale</th>
+                <th>Lien de téléchargement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Python</strong></td>
+                <td>3.10+</td>
+                <td><code>https://www.python.org/downloads</code></td>
+            </tr>
+            <tr>
+                <td><strong>PostgreSQL</strong></td>
+                <td>18</td>
+                <td><code>https://www.postgresql.org/download</code></td>
+            </tr>
+            <tr>
+                <td><strong>Git</strong></td>
+                <td>Version récente</td>
+                <td><code>https://git-scm.com</code></td>
+            </tr>
+        </tbody>
+    </table>
+	  
+    <h3>8.2 Procédure d'installation</h3>
+    
+    <ol>
+        <li>
+            <strong>Clonage du dépôt :</strong>
+            <p>Ouvrez votre terminal et récupérez les sources du projet :</p>
+            <pre><code>git clone https://github.com/miracleabh-oss/PIL1_2526_12.git&#10;cd PIL1_2526_12</code></pre>
+        </li>
+        <li>
+            <strong>Installation des dépendances logicielles :</strong>
+            <p>Installez l'ensemble des modules requis listés dans le fichier des spécifications (Flask, SQLAlchemy, bcrypt, Flask-SocketIO, psycopg2) :</p>
+            <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+            <strong>Initialisation de la base de données :</strong>
+            <p>Ouvrez votre <em>SQL Shell (psql)</em>, connectez-vous à votre instance locale et créez la base de données :</p>
+            <pre><code style="color: #fff;">CREATE DATABASE mentorlink;&#10;\q</code></pre>
+        </li>
+        <li>
+            <strong>Importation du schéma :</strong>
+            <p>Depuis votre terminal système (en dehors de psql), injectez le fichier DDL pour générer les structures des 10 tables :</p>
+            <pre><code>psql -U postgres -d mentorlink -f schema.sql</code></pre>
+            <p>Pour valider la bonne exécution, vous pouvez lister les tables générées à l'aide de la commande : <code>psql -U postgres -d mentorlink -c "\dt"</code></p>
+        </li>
+        <li>
+            <strong>Injection des données de test (Seed) :</strong>
+            <p>Pour charger les comptes utilisateurs factices ainsi que les jeux de données de démonstration :</p>
+            <pre><code>psql -U postgres -d mentorlink -f seed.sql</code></pre>
+        </li>
+        <li>
+            <strong>Configuration des accès à la base de données :</strong>
+            <p>Ouvrez le fichier <code>config.py</code> situé à la racine du projet et modifiez la variable du mot de passe avec votre configuration PostgreSQL locale :</p>
+            <pre><code style="color: #fff;">raw_password = 'votre_mot_de_passe_personnel'</code></pre>
+        </li>
+        <li>
+            <strong>Lancement du serveur applicatif :</strong>
+            <p>Démarrez l'application Flask à l'aide du script d'entrée :</p>
+            <pre><code>python run.py</code></pre>
+            <p>Le serveur s'initialise et se met à l'écoute sur l'adresse suivante : <code>http://127.0.0.1:5000</code></p>
+        </li>
+    </ol>
+
+    <h3>8.3 Résolution des anomalies courantes</h3>
+    <ul>
+        <li><strong>Erreur : <code>psql</code> n'est pas reconnu comme commande externe :</strong> Le binaire de PostgreSQL n'est pas renseigné dans les variables d'environnement (PATH) de votre système. Utilisez le chemin absolu vers l'exécutable, par exemple sur Windows : <br><code>"C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d mentorlink -f schema.sql</code></li>
+        <li><strong>Erreur : <code>ModuleNotFoundError</code> :</strong> Un package Python est manquant ou n'a pas été installé dans le bon environnement virtuel. Relancez la commande d'installation générale : <code>pip install -r requirements.txt</code>.</li>
+        <li><strong>Erreur : <code>could not connect to server</code> :</strong> Le serveur PostgreSQL local est éteint. Sous Windows, ouvrez l'utilitaire <em>Services</em> (services.msc) et démarrez manuellement le service nommé <code>postgresql-x64-XX</code>.</li>
+    </ul>
+
+    <h2>9. Manuel d'utilisation simplifié</h2>
+    <ul>
+        <li>Naviguez sur l'adresse locale <code>http://127.0.0.1:5000</code> depuis votre navigateur.</li>
+        <li>Cliquez sur <strong>S'inscrire</strong> pour renseigner vos données de filière ou utilisez un compte du fichier d'initialisation (`seed.sql`).</li>
+        <li>Connectez-vous à l'aide de vos identifiants.</li>
+        <li>Mettez à jour vos matières fortes et faibles sur la page de profil.</li>
+        <li>Consultez l'onglet <strong>Matching</strong> pour visualiser la liste ordonnée des profils pertinents. Cliquez sur <strong>Contacter</strong> pour ouvrir un canal de messagerie instantanée sécurisé.</li>
+    </ul>
+
+    <h2>10. Difficultés rencontrées & Solutions apportées</h2>
+    <p>
+      Au cours du cycle de développement, plusieurs verrous techniques ont dû être levés. Le premier résidait dans l'alignement des structures de données relationnelles pour la mise en correspondance, résolu grâce à l'étroite collaboration sur l'implémentation PostgreSQL. 
+      La conception fine de l'algorithme a également demandé plusieurs itérations de calcul pour équilibrer le barème de points et éviter les résultats aberrants (comme le fait de pouvoir matcher avec soi-même). 
+      Enfin, la centralisation sur Git a nécessité une gestion rigoureuse des branches pour éviter les conflits de fusion lors du rassemblement des modules de routes.
+    </p>
+
+    <h2>11. Conclusion</h2>
+    <p>
+      Le projet <strong>IFRI_MentorLink</strong> a pleinement atteint ses objectifs fonctionnels et techniques. Il a permis à l'Équipe 12 de consolider ses compétences en ingénierie logicielle, modélisation de bases de données relationnelles et travail collaboratif distribué. L'application offre une réponse concrète aux problématiques d'entraide universitaire, fournissant aux étudiants de l'IFRI un environnement moderne, sécurisé et performant pour propulser leur réussite académique.
+    </p>
+    
+     <footer>
+        Rapport officiel du projet intégrateur 2025-2026 — Document de l'Équipe 12 — IFRI UAC
+	 </footer>
+  </body>
+</html>
