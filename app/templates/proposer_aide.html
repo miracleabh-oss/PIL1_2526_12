@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Proposer une aide{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Proposer une aide</h1>
+    <p class="subtitle">Partagez vos compétences avec vos camarades.</p>
+</div>
+<div class="form-card">
+    <div class="form-group">
+        <label>Matière que vous proposez</label>
+        <select id="offre-skill">
+            <option value="">Choisir une matière</option>
+            {% for s in skills %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Format proposé</label>
+        <div class="radio-group">
+            {% for f in formats %}
+            <label class="radio-label">
+                <input type="radio" name="format" value="{{ f }}"> {{ f }}
+            </label>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description <small>(facultatif)</small></label>
+        <textarea id="offre-desc" rows="3" placeholder="Décrivez votre approche pédagogique..."></textarea>
+    </div>
+    <button class="btn-primary" id="btn-soumettre-offre">Publier mon offre</button>
+    <p id="msg-offre" class="msg-retour"></p>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+document.getElementById('btn-soumettre-offre').addEventListener('click', async () => {
+    const skill  = document.getElementById('offre-skill').value;
+    const format = document.querySelector('input[name="format"]:checked')?.value;
+    const desc   = document.getElementById('offre-desc').value;
+    if (!skill || !format) { document.getElementById('msg-offre').textContent = 'Remplissez tous les champs.'; return; }
+    const r = await fetch('/proposer-aide', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({skill, format, description: desc})});
+    const d = await r.json();
+    if (d.success) window.location.href = d.redirect;
+});
+</script>
+{% endblock %}
